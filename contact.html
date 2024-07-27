@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="Keywords" content="キーワード">
+	<meta name="Description" content="要約">
+	<title>塚本神社</title>
+	<!--Reset.css-->
+	<link rel="stylesheet" href="css/reset.css">
+	<!--UserCustom-->
+	<!--google fonts-->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho">
+	<!-- fontawesome -->
+	<script src="https://kit.fontawesome.com/438a18f069.js" crossorigin="anonymous"></script>
+	<!-- slick -->
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+	<!--style.css-->
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+
+<body>
+	<header>
+		<h1>
+			<a href="index.html"><img src="images/logo.png" alt="塚本神社ロゴ"></a>
+		</h1>
+		<nav>
+			<ul>
+				<li><a href="about.html">塚本神社について</a></li>
+				<li><a href="Visit.html">ご参拝</a></li>
+				<li><a href="access.html">アクセス</a></li>
+				<li><a href="contact.html">お問い合わせ</a></li>
+			</ul>
+		</nav>
+		<button class="hamburger" id="trigger">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button><!--/.hamburger-->
+	</header>
+
+	<div class="fView_area">
+		<div class="f_view" id="contact_fView">
+			<img src="images/contact_top.jpg" alt="コンタクトファーストビュー">
+			<h2>お問い合わせ</h2>
+		</div><!--/.f_view /#contact_fView-->
+	</div><!--/.fView_area-->
+
+	<div id="form_wrap">
+		<form>
+			<div class="form_input">
+				<p>
+					<label for="name">
+						お名前<span class="required"></span>
+					</label><br>
+					<input type="text" name="name" required placeholder="塚本神社" class="input_box">
+				</p>
+
+				<p>
+					<label for="kana">
+						ふりがな<span class="required"></span>
+					</label><br>
+					<input type="text" name="kana" required placeholder="つかもとじんじゃ" class="input_box">
+				</p>
+
+				<p>
+					<label for="tel">
+						電話番号<span class="required"></span>
+					</label><br>
+					<input type="tel" name="tel" required placeholder="0962892111" class="input_box">
+				</p>
+
+				<p>
+					<label for="email">
+						メールアドレス<span class="required"></span>
+					</label><br>
+					<input type="email" name="email" required placeholder="aaa@aaa.co.jp" class="input_box">
+				</p>
+
+				<!-- 郵便番号入力(7桁) -->
+				<p>
+					<label for="post_num">
+						郵便番号
+					</label><br>
+					<input type="text" name="post_num" maxlength="8"
+						onKeyUp="AjaxZip3.zip2addr(this,'','adress','adress');" required placeholder="861-2202"
+						class="input_box">
+				</p>
+
+				<!-- 住所入力(都道府県+以降の住所) -->
+				<p>
+					<label for="address">
+						住所
+					</label><br>
+					<input type="text" name="address" required placeholder="熊本県上益城郡益城町田原2081-28" class="input_box">
+				</p>
+				<p>
+					<label for="inquiry">
+						お問い合わせ内容<span class="required"></span>
+					</label><br>
+					<textarea name="inquiry" rows="4" cols="40" class="input_box"></textarea>
+				</p>
+			</div><!--/.form_input-->
+
+			<div class="personal_info">
+				<h3>個人情報の取り扱いについて、下記内容を確認し、チェックボックスにチェックを入れてください。</h3>
+				<div class="privacypolicy">
+					<p>個人情報の管理について</p>
+					<p>
+						塚本神社は、ご提供いただいた個人情報を厳正な管理のもとで安全に維持、保管いたします。個人情報への不当アクセス、または個人情報の紛失、改ざん、漏洩などの危険に対して合理的な安全対策をおこないます。塚本神社が取得した個人情報を第三者に提供、または処理を委託することはありません。<br>
+						また、公的機関より法令に基づく要請を受けた場合など、特段の事情がない限り、ご本人の了承なく個人情報を提供することはありません。<br>
+						塚本神社が保有する個人情報を適正に利用し、その保護を徹底するために適用される法令などを遵守するとともに、個人情報保護における取り組みを最大限に努めます。
+					</p>
+				</div><!--/.privacypolicy-->
+				<div class="privacypolicy_check">
+					<p>
+						<input type="checkbox" id="input-check" value="1">
+						<label for="input-check">
+							個人情報の取り扱いについて同意する
+						</label>
+					</p>
+				</div><!--/.privacypolicy_check-->
+				<div class="submitarea">
+					<p>
+						<input type="submit" value="送信">
+					</p>
+				</div><!--/.submitarea-->
+			</div><!--/.personal_info-->
+		</form>
+	</div><!--/.form_wrap-->
+
+
+
+
+
+	<p id="pagetop">
+		<a href="#">
+			<i class="fa-solid fa-chevron-up"></i>
+		</a>
+	</p>
+	<footer>
+		<p>
+			<a href="#">塚本神社</a>
+		</p>
+		<address>
+			〒861-2202　熊本県上益城郡益城町田原2081-28<br>
+			お問い合わせ　096-289-2111
+		</address>
+		<small>
+			<p>&#9400; 2023 塚本神社 All Rights Reserved.</p>
+		</small>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+	<script src="js/script.js"></script>
+</body>
+
+</html>

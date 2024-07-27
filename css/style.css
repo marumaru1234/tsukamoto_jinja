@@ -1,0 +1,1063 @@
+@charset "UTF-8";
+
+/***********************
+共通
+***********************/
+.start {
+	background: #FFF;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 9000;
+}
+
+.start p {
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	display: none;
+	z-index: 9999;
+	width: 280px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+	background-color: #f4f4f4;
+	/*	background-color: #fafafa;*/
+	font-size: 1em;
+	font-family: "Sawarabi Mincho";
+	color: #666;
+}
+
+.br_sp {
+	display: none;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 90vw;
+	height: 70px;
+	margin: 0 auto;
+	background-color: #f4f4f4;
+	z-index: 999;
+}
+
+header h1 img {
+	width: 180px;
+}
+header h1 img:hover {
+	opacity: .7;
+}
+
+header nav ul {
+	display: flex;
+}
+
+header nav ul li+li {
+	margin-left: 20px;
+}
+
+header nav ul li a {
+	color: #666;
+	font-size: 1.2em;
+	display: inline-block;
+	padding: 5px;
+}
+
+header nav ul li a:hover {
+	background-color: #a69425;
+	color: #fff;
+	transition: .3s;
+}
+
+.hamburger {
+	display: none;
+}
+
+#pagetop a {
+	display: block;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, .1);
+    line-height: 50px;
+	font-size: 1.3em;
+    text-align: center;
+}
+#pagetop a:hover {
+	background-color: rgba(166, 148, 37, .3);
+
+}
+
+footer {
+	text-align: center;
+	background-color: #fafafa;
+	padding: 30px 0;
+}
+
+footer p a {
+	font-size: 2em;
+	line-height: 2;
+	letter-spacing: 2px;
+	color: #666;
+}
+
+footer p a:hover {
+	color: #666;
+	opacity: .7;
+}
+
+footer address {
+	margin: 20px 0;
+	line-height: 1.5;
+}
+
+footer small p {
+	margin: 30px 0;
+}
+
+/***********************
+index.html（topページ）
+***********************/
+
+.fView_area {
+	overflow: hidden;
+}
+
+.f_view img {
+	width: 100vw;
+	height: 80vh;
+	object-fit: cover;
+	margin-bottom: 50px;
+}
+
+#index_fView {
+	width: 100vw;
+	height: 80vh;
+	object-fit: cover;
+}
+
+#index_fView {
+	visibility: hidden;
+}
+
+#index_fView.slick-initialized {
+	visibility: visible;
+}
+
+.slick-prev,
+.slick-next {
+	z-index: 1;
+}
+
+.slick-prev {
+	left: 10px;
+}
+
+.slick-next {
+	right: 10px;
+}
+
+#index_sec01 {
+	width: 90vw;
+	margin: 50px auto 0;
+	padding-bottom: 50px;
+}
+
+#index_sec01 h2 {
+	background: #a69425;
+	color: #fafafa;
+	padding: 10px 20px;
+	font-size: 1.6em;
+}
+
+#news .slick-slide img {
+	width: 90%;
+	height: 230px;
+	object-fit: cover;
+	margin-top: 20px;
+	transition: 1s all;
+}
+#news .slick-slide img:hover {
+	transform: scale(1.1, 1.1);
+	transition: 1s all;
+	opacity: .7;
+}
+
+#news li {
+	text-align: center;
+	line-height: 1.5;
+	overflow: hidden;
+}
+
+#news .slick-prev:before,
+#news .slick-next:before {
+	font-size: 30px;
+	line-height: 0;
+
+}
+#news .slick-prev:before:hover,
+#news .slick-next:before:hover {
+	opacity: 1;
+}
+
+.sec {
+	opacity: 0;
+    transform: translateY(50px);
+    transition: 1s;
+}
+.sec.show {
+	opacity: 1;
+    transform: none;
+}
+
+#index_sec02,
+#index_sec03 {
+	margin-top: 50px;
+}
+
+#index_sec02 h2,
+#index_sec03 h2 {
+	text-align: center;
+	font-size: 1.6em;
+	letter-spacing: 3px;
+	text-decoration: underline;
+	text-underline-offset: 5px;
+	margin-bottom: 40px;
+}
+
+.sec_wrap {
+	background-color: #fafafa;
+}
+
+#index_sec02 {
+	width: 90vw;
+	margin: 0 auto;
+	background-color: #fafafa;
+	padding: 30px 0 100px;
+}
+
+#index_sec02_con {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#index_sec02_img {
+	position: relative;
+}
+#index_sec02_img p a img {
+	width: 90%;
+	transition: 1s all;
+}
+
+#index_sec02_img p {
+	overflow: hidden;
+	letter-spacing: 1.5px;
+}
+
+
+#index_sec02_img p:last-of-type {
+	position: absolute;
+	bottom: 15px;
+	right: 70px;
+	color: #fafafa;
+	font-size: 1.5em;
+}
+
+#index_sec02_img p a img:hover {
+	transform: scale(1.1, 1.1);
+	transition: 1s all;
+	opacity: .7;
+}
+
+#index_sec02_txt {
+	display: block;
+	width: 400px;
+	line-height: 2;
+}
+
+#index_sec03 {
+	padding: 30px 0 50px;
+	width: 90vw;
+	margin: 0 auto;
+}
+
+#index_sec03_con {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#index_sec03_con table {
+	font-size: 1.4em;
+	margin-right: 50px;
+}
+
+th {
+	background: #824880;
+	padding: 10px 0;
+	color: #fafafa;
+	text-align: center;
+	letter-spacing: 3px;
+	font-weight: unset;
+}
+
+td {
+	border: solid 1px #e7e7eb;
+	padding: 10px;
+	text-align: center;
+}
+
+#index_sec03_map iframe {
+	max-width: 100%;
+}
+
+/***********************
+about.html (塚本神社について)
+***********************/
+#about_fView img {
+	object-position: 20% 20%;
+}
+
+.f_view h2 {
+	color: #fafafa;
+	font-size: 2.3em;
+	position: absolute;
+	left: 10%;
+	bottom: 15%;
+	background-color: rgba(160, 160, 160, 0.7);
+}
+
+#about_nav ul {
+	display: flex;
+	justify-content: center;
+	font-size: 1.4em;
+}
+
+#about_nav ul li+li {
+	margin-left: 20px;
+}
+
+#about_nav ul li::after {
+	content: " / ";
+}
+
+#about_nav ul li:last-of-type::after {
+	content: '';
+}
+
+#about_nav ul li a:hover,
+#about_nav ul li a:focus {
+	color: #a69425;
+}
+
+#about_nav ul li a {
+	position: relative;
+}
+
+#about_nav ul li a::before {
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: #a69425;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	margin: auto;
+	transform-origin: right top;
+	transform: scale(0, 1);
+	transition: transform .8s;
+}
+
+#about_nav ul li a:hover::before {
+	transform-origin: left top;
+	transform: scale(1, 1);
+}
+
+.about_sec {
+	width: 90vw;
+	margin: 30px auto;
+}
+
+.about_sec_img {
+	position: relative;
+}
+
+.about_sec_img img {
+	width: 70%;
+	height: 250px;
+	object-fit: cover;
+	display: block;
+	margin: 0 auto 20px;
+}
+
+.about_sec_img h3 {
+	position: absolute;
+	color: #fafafa;
+	background: rgba(150, 150, 150, 0.7);
+	font-size: 1.8em;
+	left: 20%;
+	bottom: 10%;
+}
+
+#about_sec01 img {
+	object-position: 50% 10%;
+}
+
+/*#about_sec02 img {
+	object-position: 50% 50%;
+}*/
+#about_sec03 img {
+	object-position: 90% 100%;
+}
+
+.about_sec h4 {
+	font-size: 1.2em;
+	font-weight: bold;
+	line-height: 2;
+}
+
+.about_sec_txt {
+	text-align: center;
+	display: block;
+	width: 70%;
+	margin: 0 auto;
+	text-align: center;
+	line-height: 2;
+}
+
+#about_sec02 {
+	padding: 30px 0;
+}
+
+#about_sec02_txt,
+#about_sec03_txt {
+	text-align: left;
+}
+
+#about_sec03_txt p:nth-of-type(2) {
+	font-size: 1.1em;
+	color: #DF2F32;
+	line-height: 3;
+	text-align: center;
+	font-weight: bold;
+}
+
+#about02_txt,
+#about03_txt {
+	text-align: left;
+}
+
+#about03_txt p:nth-of-type(2) {
+	font-size: 1.1em;
+	color: #DF2F32;
+	line-height: 3;
+	text-align: center;
+	font-weight: bold;
+}
+
+/***********************
+visit.html (ご参拝)
+***********************/
+#visit_fView img {
+	object-position: 20% 60%;
+}
+
+#visit_sec01 {
+	width: 90vw;
+	margin: 0 auto;
+}
+
+#visit_sec01_openTime p {
+	font-size: 1.4em;
+	line-height: 2.5;
+	letter-spacing: 2px;
+}
+
+#visit_sec01_openTime p::before {
+	content: '';
+	border-left: 8px solid #DF2F32;
+	margin-right: 5px;
+}
+
+#visit_sec01_schedule {
+	margin-top: 30px;
+	padding: 30px 0;
+	font-size: 1.2em;
+	line-height: 2;
+	border-top: 1px solid #666;
+	border-bottom: 1px solid #666;
+}
+
+#visit_sec02 {
+	padding-bottom: 50px;
+}
+
+#visit_sec02 h3 {
+	display: block;
+	width: 90vw;
+	margin: 0 auto;
+	font-size: 1.4em;
+	line-height: 2;
+	margin-top: 50px;
+}
+
+.visit_sec02_con {
+	width: 90vw;
+	margin: 30px auto 0;
+	display: flex;
+	align-items: center;
+}
+
+.visit_sec_img {
+	position: relative;
+	flex: 1;
+}
+
+.visit_sec_img img {
+	width: 100%;
+}
+
+.visit_sec_img h4 {
+	position: absolute;
+	left: 10%;
+	top: 10%;
+	font-size: 1.4em;
+	letter-spacing: 2px;
+	padding: 10px;
+	color: #fafafa;
+	background: rgba(160, 160, 160, 0.5);
+}
+
+.visit_sec_txt {
+	flex: 1.5;
+	margin-left: 30px;
+}
+
+.visit_sec_txt p {
+	font-size: 1.1em;
+	letter-spacing: 1.5px;
+}
+
+/***********************
+access.html (アクセス)
+***********************/
+#access_fView img {
+	object-position: 40% 40%;
+}
+
+#access_wrap {
+	width: 90vw;
+	margin: 0 auto;
+}
+
+.access_sec {
+	width: 80%;
+	margin: 30px auto 0;
+	padding-bottom: 50px;
+}
+
+#access_sec01 p {
+	font-size: 1.4em;
+	text-align: center;
+}
+
+#access_sec01 iframe {
+	width: 100%;
+	margin-top: 20px;
+}
+
+.access_sec h3::before {
+	content: '';
+	border-left: 8px solid #DF2F32;
+	margin-right: 5px;
+}
+
+.access_sec h3 {
+	font-size: 1.4em;
+	line-height: 2.5;
+	letter-spacing: 2px;
+}
+
+.access_sec h4 {
+	font-size: 1.1em;
+	line-height: 2;
+	padding-left: 20px;
+}
+
+#access_sec02 p {
+	font-size: 1.1em;
+	line-height: 2;
+	padding-left: 40px;
+}
+
+#access_sec03 p {
+	font-size: 1.1em;
+	line-height: 2;
+	padding-left: 40px;
+}
+
+#access_sec03 p:first-of-type {
+	margin-bottom: 20px;
+}
+
+/***********************
+contact.html (お問い合わせ)
+***********************/
+#contact_fView {
+	object-position: 40% 40%;
+}
+
+#form_wrap {
+	width: 90vw;
+	margin: 0 auto;
+	padding-bottom: 50px;
+}
+
+.form_input {
+	width: 80%;
+	margin: 30px auto 0;
+}
+
+.form_input p {
+	margin-top: 30px;
+	font-size: 1.1em;
+}
+
+.form_input p::before {
+	content: '';
+	border-left: 8px solid #DF2F32;
+	margin-right: 5px;
+}
+
+.input_box {
+	background-color: #fafafa;
+	border: 1px solid #333;
+	width: 100%;
+	padding: 10px;
+	margin-top: 10px;
+}
+
+.required::after {
+	content: '必須';
+	background-color: #824880;
+	font-size: .5em;
+	color: #fafafa;
+	padding: 3px 5px;
+	margin-left: 5px;
+	vertical-align: middle;
+}
+
+.personal_info {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.personal_info h3 {
+	text-align: center;
+	margin-top: 30px;
+}
+
+.privacypolicy {
+	border: 1px solid #666;
+	overflow-y: scroll;
+	max-height: 300px;
+	padding: 20px;
+	background-color: #fafafa;
+	margin-top: 20px;
+}
+
+.privacypolicy p {
+	padding: 0;
+	font-size: 1em;
+}
+
+.privacypolicy p:first-of-type {
+	font-weight: bold;
+	line-height: 4;
+}
+
+.privacypolicy p:last-child {
+	text-align: left;
+}
+
+.privacypolicy_check p {
+	font-weight: bold;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.privacypolicy_check p label[for] {
+	vertical-align: text-top;
+}
+
+.privacypolicy_check {
+	margin-top: 50px;
+	font-size: 1.1em;
+}
+
+.privacypolicy_check input {
+	width: 20px;
+	height: 20px;
+	border: 1px solid #666;
+	background-color: #fafafa;
+}
+
+.submitarea p {
+	margin-top: 50px;
+	text-align: center;
+}
+
+input[type=submit] {
+	width: 200px;
+	height: 50px;
+	border: none;
+	background-color: #a69425;
+	font-size: 1.4em;
+	letter-spacing: 5px;
+	color: #fafafa;
+	text-align: center;
+	box-shadow: 5px 5px 0 #bbb;
+	transition: box-shadow .4s;
+	font-family: "Sawarabi Mincho";
+}
+
+input[type=submit]:hover {
+	box-shadow: 0 0 0 #bbb;
+}
+
+/***********************
+ハンバーガーメニューの設定
+***********************/
+
+@media screen and (max-width: 810px) {
+	.hamburger {
+		display: block;
+		width: 40px;
+		height: 40px;
+		background-color: #a69425;
+		z-index: 9999;
+		border: none;
+		/*transition: 0.4s background-color ease;
+		top: 20px;
+		right: 20px;*/
+	}
+
+	.hamburger:hover {
+		background-color: #824880;
+	}
+
+	.hamburger span {
+		height: 2px;
+		background-color: #ffe438;
+		position: relative;
+		transition: 0.4s all ease;
+		display: block;
+	}
+
+	.hamburger span:nth-child(1) {
+		top: 0;
+	}
+
+	.hamburger span:nth-child(2) {
+		margin: 8px 0;
+	}
+
+	.hamburger span:nth-child(3) {
+		top: 0px;
+	}
+
+	/* ハンバーガーメニュー_クリック後スタイル */
+	.hamburger.open span:first-child {
+		transform: rotate(45deg);
+	}
+
+	.hamburger.open span:nth-child(2) {
+		display: none;
+	}
+
+	.hamburger.open span:last-child {
+		top: -2px;
+		transform: rotate(-45deg);
+	}
+}
+
+/***********************
+810px以下の設定
+***********************/
+@media screen and (max-width: 810px) {
+
+	/***********************
+	共通
+	***********************/
+	body {}
+
+	.br_sp {
+		display: block;
+	}
+
+	header {
+		width: 100%;
+		height: 60px;
+		position: fixed;
+		background-color: #f4f4f4;
+		border-bottom: 1.5px solid #fff;
+	}
+
+	header h1 img {
+		width: 150px;
+		margin-left: 10px;
+	}
+
+	header nav {
+		position: fixed;
+		top: 60px;
+		left: -100%;
+		width: 60%;
+		height: 100%;
+		background-color: rgba(244, 244, 244, 0.8);
+		z-index: 999;
+		padding-top: 50px;
+		transition: 1s;
+	}
+
+	header nav.open {
+		left: 0;
+	}
+
+	header nav ul {
+		flex-direction: column;
+	}
+
+	header nav ul li {
+		height: 100%;
+		font-size: 1.1em;
+		text-align: center;
+		padding-bottom: 15px;
+	}
+
+	header nav ul li+li {
+		margin-left: 0;
+		margin-top: 30px;
+	}
+
+	#pagetop {
+		margin-top: 30px;
+		padding-bottom: 30px;
+	}
+
+	footer {
+		text-align: center;
+		background-color: #fafafa;
+		padding-top: 30px;
+	}
+
+	footer p a {
+		display: block;
+		font-size: 1.5em;
+		letter-spacing: 2px;
+	}
+
+	footer address {
+		margin: 10px 0;
+		line-height: 1.5;
+	}
+
+	footer small p {
+		margin: 20px 0;
+	}
+
+	/***********************
+	index.html（topページ）
+	***********************/
+	#index_sec01 {
+		padding-bottom: 30px;
+	}
+
+	#index_sec01 h2 {
+		font-size: 1.4em;
+		padding: 10px;
+	}
+
+	#index_sec01 ul {
+		padding: 0 30px;
+	}
+
+	#index_sec01 ul li {
+		padding: 13px 0px;
+	}
+
+	#index_sec01 ul li time {
+		width: 130px;
+	}
+
+	.index_sec {
+		margin-top: 30px;
+	}
+
+	.index_sec h2 {
+		font-size: 1.4em;
+		letter-spacing: 1.5px;
+		margin-bottom: 20px;
+	}
+
+	#index_sec02 {
+		background-color: #fafafa;
+		padding: 30px 0 30px;
+	}
+
+	#index_sec02_con {
+		display: block;
+	}
+
+	#index_sec02_con p:first-of-type {
+		text-align: center;
+	}
+
+	#index_sec02_con p a img {
+		max-width: 50%;
+		margin-bottom: 20px;
+	}
+
+	#index_sec02_con p:nth-of-type(2) {
+		display: none;
+	}
+	#index_sec02_txt {
+		margin: 0 auto;
+	}
+
+
+	#index_sec03 {
+		padding-bottom: 30px;
+	}
+
+	#index_sec03_con {
+		display: unset;
+	}
+
+	#index_sec03_con table {
+		width: 100%;
+		font-size: 1.1em;
+		line-height: 1.3;
+		margin-right: 0px;
+		margin: 0 auto;
+	}
+
+	th {
+		padding: 10px 0;
+	}
+
+	td {
+		padding: 10px 0;
+	}
+
+	#index_sec03_map iframe {
+		display: block;
+		margin: 30px auto 0;
+	}
+
+	/***********************
+	about.html (塚本神社について)
+	***********************/
+	.fView_area .f_view h2 {
+		font-size: 1.8em;
+		bottom: 25%;
+	}
+
+	body #about_nav ul {
+		flex-direction: column;
+		text-align: center;
+		font-size: 1.4em;
+		line-height: 2;
+	}
+
+	body #about_nav ul li+li {
+		margin-left: 0;
+	}
+
+	body #about_nav ul li::after {
+		content: '';
+	}
+
+	/***********************
+	visit.html (ご参拝)
+	***********************/
+	#visit_sec01_openTime p {
+		font-size: 1.2em;
+		line-height: 2;
+		letter-spacing: 1px;
+	}
+
+	#visit_sec01_schedule {
+		font-size: 1.1em;
+		line-height: 1.8;
+	}
+
+	.visit_sec02_con:not(:nth-of-type(1)) {
+		margin-top: 80px;
+	}
+
+	#visit_sec02 h3 {
+		font-size: 1.2em;
+		line-height: 2;
+		margin-top: 30px;
+	}
+
+	.visit_sec02_con {
+		display: block;
+	}
+
+	.visit_sec_img {
+		width: 60%;
+		margin: 0 auto 20px;
+	}
+
+	.visit_sec_img h4 {
+		font-size: 1.3em;
+	}
+
+	.visit_sec_txt {
+		margin-left: 0px;
+	}
+
+	.visit_sec_txt p {
+		display: block;
+		width: 90%;
+		margin: 0 auto;
+		font-size: 1.1em;
+		letter-spacing: 1.3px;
+	}
+
+	/***********************
+	access.html (アクセス)
+	***********************/
+	#access_sec01 p {
+		font-size: 1.2em;
+	}
+
+	.access_sec h3 {
+		font-size: 1.2em;
+		line-height: 2;
+	}
+
+	#access_sec02 p {
+		font-size: 1.1em;
+		line-height: 1.8;
+	}
+
+	#access_sec03 p {
+		font-size: 1.1em;
+		line-height: 1.8;
+	}
+}
